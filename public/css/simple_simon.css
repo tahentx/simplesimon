@@ -1,0 +1,76 @@
+        #main {
+            width: 565px;
+            height: 460px;
+            border: 10px solid black;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+            background-color: orange;
+            margin: auto;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-family: 'Slabo 27px', serif;
+        }
+
+        .red {
+            margin: 5px;
+            width: 235px;
+            height: 180px;
+            border: 2px solid black;
+            padding: 15px;
+            float: left;
+            background-color: red;
+            border-radius: 70px 15px 15px 15px;
+        }
+
+        .blue {
+            margin: 5px;
+            width: 235px;
+            height: 180px;
+            border: 2px solid black;
+            padding: 15px;
+            float: right;
+            background-color: blue;
+            border-radius: 15px 70px 15px 15px;
+        }
+
+        .green {
+            margin: 5px;
+            width: 235px;
+            height: 180px;
+            border: 2px solid black;
+            padding: 15px;
+            float: left;
+            background-color: green;
+            border-radius: 15px 15px 15px 70px;
+        }
+
+        .yellow {
+            margin: 5px;
+            width: 235px;
+            height: 180px;
+            border: 2px solid black;
+            padding: 15px;
+            float: right;
+            background-color: yellow;
+            border-radius:  15px 15px 70px 15px;
+        }
+
+        #reset {
+            font-size: 30px;
+            font-family: 'Slabo 27px', serif;
+            background-color: black;
+            color: white;
+            align-items: center;
+        }
+
+        #start {
+            font-size: 30px;
+            font-family: 'Slabo 27px', serif;
+            background-color: black;
+            color: white;
+align-items: center;
+        }
