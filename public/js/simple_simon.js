@@ -1,37 +1,66 @@
 
 "use strict";
 
-var masterPattern = "";
-var red = 0;
-var blue = 1;
-var yellow = 2;
-var green = 3;
-var min = 0;
-var max = 3;
+// Functionality: variables, logic, rules
+
+var masterPattern = [];
+
+var random;
 
 
-var generateNumber = Math.floor(Math.random()* 3);
-
-// convert number to color for interactivity
-
-var number = 3;
-
-switch (number) {
-	case 1:
-		console.log("red");
-		break;
-	case 2:
-		console.log("blue");
-		break;
-	case 3:
-		console.log("green");
-		break;
-	case 3:
-		console.log("yellow");
-		break;
+function generateRandomNumber() {
+	random = Math.floor(Math.random()* 4);
+	return random;
 }
 
-// page effects, decoration, interactivity
+
+$("button#start").on("click", function() {
+	generateRandomNumber();
+});
+
+
+var squares = [
+	$(".red"),
+	$(".blue"),
+	$(".green"),
+	$(".yellow")];
+
+function getRandomSquare(){
+	var RandomIndex = generateRandomNumber();
+	return squares[RandomIndex];
+}
+
+function animate(){
+	var randomSquare = getRandomSquare();
+	randomSquare.animate({opacity: .4},80).animate({opacity: 1},80);	
+}
+
+function simonSequence(){
+
+}
+
+
+
+	// masterPattern.push(random);
+
+// Aesthetics: JQuery page effects, decoration, interactivity
+
+
+$(".red").on("click", function(){
+	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+});
+
+$(".blue").on("click", function(){
+	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+});
+
+$(".yellow").on("click", function(){
+	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+});
+
+$(".green").on("click", function(){
+	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+});
 
 $(".red").hover(function() {
 	$(this).fadeOut (100);
@@ -52,8 +81,6 @@ $(".yellow").hover(function() {
 	$(this).fadeOut (100);
 	$(this).fadeIn (300);
 });
-
-
 
 
 

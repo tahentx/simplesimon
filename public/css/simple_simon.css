@@ -59,12 +59,17 @@
             border-radius:  15px 15px 70px 15px;
         }
 
+        #buttons {
+            margin-top: 10px;
+            margin: 0 41%;
+        }
+
         #reset {
             font-size: 30px;
             font-family: 'Slabo 27px', serif;
             background-color: black;
             color: white;
-            align-items: center;
+
         }
 
         #start {
@@ -72,5 +77,10 @@
             font-family: 'Slabo 27px', serif;
             background-color: black;
             color: white;
-align-items: center;
         }
+/*
+        #hello {
+            background-image:; 
+            position: absolute;
+            left: -400px;
+        }*/
