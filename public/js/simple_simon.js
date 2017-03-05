@@ -30,6 +30,8 @@ function getRandomSquare(){
 	return squares[RandomIndex];
 }
 
+// need to add functions here.
+
 function animate(){
 	var randomSquare = getRandomSquare();
 	randomSquare.animate({opacity: .4},80).animate({opacity: 1},80);	
