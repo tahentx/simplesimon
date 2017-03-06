@@ -41,32 +41,22 @@ function simonAnimateSequence () {
 	var interval = 1000; // interval time in milliseconds
 
 	var intervalId = setInterval(function () {
-    if (count >= max) {
-        clearInterval(intervalId);
-        alert('Congrats! You have passed the first round!');
-    } else {
-        count++;
-        animateSquares(masterPattern[count]);
-        console.log("Fired");
-    }
+	    if (count >= max) {
+	        clearInterval(intervalId);
+	        alert('Your turn!');
+	    } else {
+	        animateSquares(masterPattern[count]);
+	        count++;
+	        console.log("Fired");
+	    }
 	}, interval);
 }
 
 function animateSquares (element) {
-	$(".square").animate({opacity: .4},80).animate({opacity: 1},80);	
+	element.animate({opacity: .4},400, function(){
+	element.animate({opacity: 1},400);		
+	})	 
 }
-
-
-$(".square").on("click", function(){
-	animateSquares($(this));
-});
-
-
-$(".square").hover(function() {
-	$(this).fadeOut (100);
-	$(this).fadeIn (300);
-});
-
 
 // Aesthetics: JQuery page effects, decoration, interactivity
 
@@ -75,17 +65,6 @@ $(".square").on("click", function(){
 	animateSquares($(this));
 });
 
-// $(".blue").on("click", function(){
-// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
-// });
-
-// $(".yellow").on("click", function(){
-// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
-// });
-
-// $(".green").on("click", function(){
-// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
-// });
 
 $(".square").hover(function() {
 	$(this).fadeOut (100);
@@ -104,7 +83,7 @@ function userTurn () {
 			var clickedId = "#" + $(this).attr("id");
 			console.log("Clicked: " + clickedId);
 			console.log("Array: " + memoryArray[clickCount]);
-			simonAnimateSequence(clickedId, 180);
+			animateSquares(clickedId, 180);
 			console.log(this);
 			if (clickedId == memoryArray[clickCount]){
 			if (clickCount == memoryArray.length -1){
