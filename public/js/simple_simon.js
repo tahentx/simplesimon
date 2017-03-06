@@ -45,15 +45,15 @@ function simonAnimateSequence () {
         clearInterval(intervalId);
         alert('Congrats! You have passed the first round!');
     } else {
-        animateSquares(masterPattern[count]);
         count++;
+        animateSquares(masterPattern[count]);
+        console.log("Fired");
     }
 	}, interval);
 }
 
-
 function animateSquares (element) {
-	element.animate({opacity: .4},80).animate({opacity: 1},80);	
+	$(".square").animate({opacity: .4},80).animate({opacity: 1},80);	
 }
 
 
@@ -66,6 +66,32 @@ $(".square").hover(function() {
 	$(this).fadeOut (100);
 	$(this).fadeIn (300);
 });
+
+
+// Aesthetics: JQuery page effects, decoration, interactivity
+
+
+$(".square").on("click", function(){
+	animateSquares($(this));
+});
+
+// $(".blue").on("click", function(){
+// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+// });
+
+// $(".yellow").on("click", function(){
+// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+// });
+
+// $(".green").on("click", function(){
+// 	$(this).animate({opacity: .4},80).animate({opacity: 1},80);	
+// });
+
+$(".square").hover(function() {
+	$(this).fadeOut (100);
+	$(this).fadeIn (300);
+});
+
 
 
 // The code below defines the user interactivity and how failure takes place.
