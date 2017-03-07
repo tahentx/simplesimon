@@ -66,7 +66,7 @@ $(".square").on("click", function(){
 });
 
 
-$(".square").hover(function() {
+$(".square").howver(function() {
 	$(this).fadeOut (100);
 	$(this).fadeIn (300);
 });
@@ -100,7 +100,10 @@ function userTurn () {
 	})
 }
 
-
+$("#reset").on("click", function() {
+	memoryArray = [];
+	masterPattern = [];
+});
 
 
 
