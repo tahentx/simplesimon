@@ -9,6 +9,10 @@
             margin: auto;
         }
 
+        body {
+            background-color: lightblue;
+        }
+
 
         h1 {
             text-align: center;
@@ -78,9 +82,3 @@
             background-color: black;
             color: white;
         }
-/*
-        #hello {
-            background-image:; 
-            position: absolute;
-            left: -400px;
-        }*/
