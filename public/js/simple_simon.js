@@ -4,6 +4,8 @@
 
 var masterPattern = [];
 
+var memoryArray = [];
+
 var random;
 
 function generateRandomNumber() {
@@ -66,7 +68,7 @@ $(".square").on("click", function(){
 });
 
 
-$(".square").howver(function() {
+$(".square").hover(function() {
 	$(this).fadeOut (100);
 	$(this).fadeIn (300);
 });
@@ -92,6 +94,7 @@ function userTurn () {
 				$(".square").off("click");
 			} else {
 				clickCount++;
+				memoryArray.push[clickCount];
 			}
 		}else{
 			memoryArray = [];
