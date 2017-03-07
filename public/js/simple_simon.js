@@ -2,16 +2,21 @@
 
 // The code below establishes the logic, and the sequence of the squares lighting up.
 
+// Global variables declared.
+
 var masterPattern = [];
 
 var memoryArray = [];
 
-var random;
 
 function generateRandomNumber() {
+	var random;
 	random = Math.floor(Math.random()* 4);
 	return random;
 }
+
+
+// Start button functionality defined.
 
 
 $("#start").on("click", function() {
@@ -44,6 +49,7 @@ function simonAnimateSequence () {
 
 	var intervalId = setInterval(function () {
 	    if (count >= max) {
+	    	userTurn();
 	        clearInterval(intervalId);
 	        alert('Your turn!');
 	    } else {
@@ -54,18 +60,15 @@ function simonAnimateSequence () {
 	}, interval);
 }
 
+
 function animateSquares (element) {
 	element.animate({opacity: .4},400, function(){
 	element.animate({opacity: 1},400);		
 	})	 
 }
 
-// Aesthetics: JQuery page effects, decoration, interactivity
 
-
-$(".square").on("click", function(){
-	animateSquares($(this));
-});
+// Aesthetics section: JQuery page effects, decoration, interactivity
 
 
 $(".square").hover(function() {
@@ -74,37 +77,38 @@ $(".square").hover(function() {
 });
 
 
-
 // The code below defines the user interactivity and how failure takes place.
 
 
 function userTurn () {
 	var clickCount = 0;
-
 		$(".square").on("click", function(){
-			var clickedId = "#" + $(this).attr("id");
-			console.log("Clicked: " + clickedId);
-			console.log("Array: " + memoryArray[clickCount]);
-			animateSquares(clickedId, 180);
+			var pattern = masterPattern[clickCount];
+			console.log("Array: " + pattern);
+			animateSquares($(this));
 			console.log(this);
-			if (clickedId == memoryArray[clickCount]){
-			if (clickCount == memoryArray.length -1){
-				newMemory();
+			
+			if ($(this).attr("data") == pattern.attr("data")){
+				if (clickCount == masterPattern.length -1){
+				newRound();
 				clickCount = 0;
 				$(".square").off("click");
 			} else {
 				clickCount++;
-				memoryArray.push[clickCount];
 			}
+
 		}else{
-			memoryArray = [];
+			masterPattern = [];
 			alert("Game over!");
 		}
 	})
 }
 
+
+// Code below creates the 'reset' button functionality
+
+
 $("#reset").on("click", function() {
-	memoryArray = [];
 	masterPattern = [];
 });
 
